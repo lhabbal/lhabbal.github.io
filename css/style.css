@@ -1,0 +1,314 @@
+
+* {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f6efe2;
+}
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 7px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+  position: absolute;
+  top: -50px;
+}
+
+.skip a:focus{
+  position: absolute;
+  top: 10px;
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #f6efe2;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: #000000;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: #f6efe2;
+  display: block;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.logo {
+  background-color: #f6efe2;
+  color: white;
+/*  font-family: "Dancing Script", sans-serif;*/
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+/* insert homepage image */
+.responsive {
+  width: 100%;
+  height: auto;
+/*  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;*/
+}
+
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Centered text */
+.centered1 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.centered2 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+.centered3 {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+/* parallax image on about page*/
+.about {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px; 
+    background-image: url('../images/about.JPG');
+  }
+
+/* h1 text styling */
+h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+  padding: 20px;
+  text-align: center;
+  color: #000000;
+}
+
+/* h2 text styling */
+
+h2 {
+  margin-bottom: 10px;
+  padding:20px;
+}
+
+/* h3 text styling */
+
+h3 {
+  padding: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/*animation */
+#animated {
+  color: black;
+  animation-name: animation;
+  animation-duration: 10s;
+}
+
+@keyframes animation {
+  from {color:black;}
+  to {color:green;}
+}
+
+/* turning animation off */
+@media only screen and (max-width: 600px) {
+  #animated {
+    color: black;
+  }
+}
+
+/* p text styling */
+p {
+  padding: 20px;
+  line-height: 1.5em;
+}
+
+/* list text styling */
+li {
+  padding: 20px;
+  line-height: 1em;
+}
+
+/*blog page */
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.grid-container {
+  display: grid;
+  float: left;
+  width: 75%;
+}
+
+/* blog post image */
+.blog-img {
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*photography page */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: center;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  opacity: 0.5;
+  box-shadow: 1px 1px 3px 3px #ccc;
+  border-radius: 8px;
+}
+
+.column img:hover {
+  opacity: 1.0;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Contact page */
+
+/* Style inputs with type="text", select elements and textareas */
+label {
+  color: #000000;
+}
+
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container1 {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+/* footer */
+
+footer{
+  width:100%;
+  text-align: center;
+  color: #000000;
+  min-height: 30px;
+/*  position: fixed;*/
+  left: 0;
+  bottom: 0;
+  padding: 4px;
+  background-color: #f6efe2;
+
+}
+
+footer p{
+
+  padding-bottom: 15px;
+}
