@@ -183,14 +183,15 @@ li {
 /* Left column */
 .grid-container {
   display: grid;
-  float: left;
   width: 75%;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
 }
 
 /* blog post image */
 .blog-img {
   width: 100%;
-  padding: 20px;
+  padding-top: 20px;
 }
 
 /* Add a card effect for articles */
@@ -198,13 +199,13 @@ li {
   background-color: white;
   padding: 20px;
   margin-top: 20px;
+  border-radius: 10px;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.card a{
+  text-align: center;
+  text-decoration: underline;
+  color: #000000;
 }
 
 /*photography page */
@@ -236,21 +237,25 @@ li {
   opacity: 1.0;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 481px) {
   .column {
     flex: 100%;
     max-width: 100%;
   }
 }
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (min-width: 769px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 
 /* Contact page */
 
@@ -303,7 +308,7 @@ footer{
 /*  position: fixed;*/
   left: 0;
   bottom: 0;
-  padding: 4px;
+/*  padding: 4px;*/
   background-color: #f6efe2;
 
 }
