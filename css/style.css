@@ -1,7 +1,9 @@
+html {
+  background-color: #f6efe2;
+}
 
 * {
   font-family: "Montserrat", sans-serif;
-  background-color: #f6efe2;
 }
 
 .skip a{
@@ -28,44 +30,36 @@
   font-family: "Montserrat", sans-serif;
 }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-  display: none;
-}
-
-/* Style navigation menu links */
+/* Style the links inside the navigation bar */
 .topnav a {
+  display: block;
   color: #000000;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 16px;
-  display: block;
   text-align: center;
-  margin: auto;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-/* Style the hamburger menu */
-.topnav a.icon {
-  background: #f6efe2;
-  display: block;
-  position: absolute;
-  right: 2px;
-  top: 2px;
-}
-
-/* Add a grey background color on mouse-over */
+/* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Style the active link (or home/logo) */
-.logo {
-  background-color: #f6efe2;
-  color: white;
-/*  font-family: "Dancing Script", sans-serif;*/
-  font-size: 40px;
+/* Add an active class to highlight the current page */
+a.active {
+  text-decoration: underline;
   text-transform: uppercase;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+#mylinks{
+  display: flex;
+  flex-direction: column;
 }
 
 /* insert homepage image */
@@ -89,7 +83,7 @@
 
 .home-text{
   position: absolute;
-  top: 40%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
@@ -159,7 +153,7 @@ h3 {
 }
 
 /* turning animation off */
-@media only screen and (max-width: 600px) {
+@media (prefers-reduced-motion) {
   #animated {
     color: black;
   }
@@ -218,11 +212,6 @@ li {
 }
 
 /* Create four equal columns that sits next to each other */
-.column {
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
 
 .column img {
   margin-top: 8px;
@@ -237,23 +226,65 @@ li {
   opacity: 1.0;
 }
 
+/* @media screen and (max-width: 600px) {
+  .topnav a:not(:first-child)
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+} */
+
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (min-width: 481px) {
-  .column {
-    flex: 50%;
-    min-width: 50%;
+@media all and (min-width: 481px) {
+
+  .home-text {
+    top: 30%;
+  }
+
+  #mylinks{
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
   }
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (min-width: 769px) {
-
-    .column {
-    flex: 100%;
-    min-width: 100%;
+@media all and (min-width: 850px) {
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
   }
   .grid-container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+  .home-text {
+    top: 40%;
+  }
+
+  #mylinks{
+    justify-content: left;
+    align-items: center;
   }
 }
 
@@ -298,7 +329,6 @@ input[type=submit]:hover {
   padding: 20px;
 }
 
-
 /* footer */
 
 footer{
@@ -315,6 +345,5 @@ footer{
 }
 
 footer p{
-
   padding-bottom: 15px;
 }
