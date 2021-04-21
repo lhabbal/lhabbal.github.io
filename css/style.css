@@ -116,6 +116,7 @@ a.active {
     background-image: url('../images/about.JPG');
   }
 
+
 /* h1 text styling */
 h1 {
   font-size: 30px;
@@ -152,11 +153,17 @@ h3 {
   to {color:green;}
 }
 
-/* turning animation off */
+/* turning animation and parallax off */
 @media (prefers-reduced-motion) {
   #animated {
+    animation: none;
     color: black;
   }
+
+    /* turn off parallax image on about page*/
+  .about {
+      background-attachment: scroll;
+    }
 }
 
 /* p text styling */
